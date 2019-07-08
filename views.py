@@ -31,6 +31,7 @@ def github_api(request):
     
 def home(request):
     content = open('content/index.html')
+    print(content)
     main_data = {
     		'title' : 'Law Technology',
     		'home_class' : 'active',

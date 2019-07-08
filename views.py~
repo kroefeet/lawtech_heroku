@@ -35,7 +35,7 @@ def home(request):
     		'title' : 'Law Technology',
     		'home_class' : 'active',
     		'copy_year' : '2019',
-    		'content' : content
+    		'content' : content,
     
     }
     return render(request, 'base.html', main_data)
