@@ -11,13 +11,17 @@ def index(request):
     ''')
 
 
-def about_me(request):
-
-    context = {
-        'name': 'Ash Ketchum',
-        'pokemon': 'Pikachu',
+def contact_me(request):
+    content = open('content/contact.html').read()
+    
+    main_data = {
+    		'title' : 'Law Technology',
+    		'contact_class' : 'active',
+    		'copy_year' : '2019',
+    		'content' : content,
+    
     }
-    return render(request, 'about_me.html', context)
+    return render(request, 'base.html', main_data)
 
 
 def github_api(request):
@@ -35,6 +39,30 @@ def home(request):
     main_data = {
     		'title' : 'Law Technology',
     		'home_class' : 'active',
+    		'copy_year' : '2019',
+    		'content' : content,
+    
+    }
+    return render(request, 'base.html', main_data)
+    
+def projects(request):
+    content = open('content/projects.html').read()
+    
+    main_data = {
+    		'title' : 'Law Technology',
+    		'projects_class' : 'active',
+    		'copy_year' : '2019',
+    		'content' : content,
+    
+    }
+    return render(request, 'base.html', main_data)
+    
+def blog(request):
+    content = open('content/blog.html').read()
+    
+    main_data = {
+    		'title' : 'Law Technology',
+    		'blog_class' : 'active',
     		'copy_year' : '2019',
     		'content' : content,
     
