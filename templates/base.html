@@ -49,26 +49,13 @@
 
 <!-- this is the content -->
 
-		{% if blog_title != '' %}
-	      <div class="row light_div rounded page_heading">
-	          <div class=" col-md-6">
-	            <h1>{{blog_title|safe}}</h1>
-	            <p>{{date|safe}}</p>
-		{% endif %}	
+
 
 
 {{content|safe}}
 
 
-		{% if blog_title !='' %}
-	       </div>
-	 	
-	    		</div>
-	    	
-	    		
-	    		</div>
-	    	</div>
-		{% endif %}	
+
 
 
 <!-- this is the bottom -->
