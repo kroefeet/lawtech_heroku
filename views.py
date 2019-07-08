@@ -30,11 +30,12 @@ def github_api(request):
     return render(request, 'github.html', context)
     
 def home(request):
-
+    content = open('content/index.html')
     main_data = {
     		'title' : 'Law Technology',
     		'home_class' : 'active',
     		'copy_year' : '2019',
+    		'content' : content,
     
     }
     return render(request, 'base.html', main_data)

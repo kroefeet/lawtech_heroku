@@ -3,9 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    # This is similar to ones we have done before. Instead of keeping
-    # the HTML / template in a separate directory, we just reply with
-    # the HTML embedded here.
+
     return HttpResponse('''
         <h1>Welcome to my home page!</h1>
         <a href="/about-me">About me</a> <br />
@@ -14,9 +12,7 @@ def index(request):
 
 
 def about_me(request):
-    # Django comes with a "shortcut" function called "render", that
-    # lets us read in HTML template files in separate directories to
-    # keep our code better organized.
+
     context = {
         'name': 'Ash Ketchum',
         'pokemon': 'Pikachu',
@@ -32,5 +28,16 @@ def github_api(request):
         'github_repos': repos,
     }
     return render(request, 'github.html', context)
+    
+def home(request):
+    content = open('content/index.html')
+    main_data = {
+    		'title' : 'Law Technology',
+    		'home_class' : 'active',
+    		'copy_year' : '2019',
+    		'content' : content
+    
+    }
+    return render(request, 'base.html', main_data)
     
     
