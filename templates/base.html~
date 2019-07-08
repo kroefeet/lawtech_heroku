@@ -22,22 +22,22 @@
 <div class="container">
 
      <nav class="navbar navbar-expand-md">
-      <a class="navbar-brand" href="index.html">Law.Technology</a>
+      <a class="navbar-brand" href="index">Law.Technology</a>
       
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item {{home_class|safe}}">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index">Home</a>
           </li>
           <li class="nav-item {{projects_class|safe}}">
-            <a class="nav-link" href="projects.html">Projects</a>
+            <a class="nav-link" href="projects">Projects</a>
           </li>
           <li class="nav-item {{contact_class|safe}}">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="contact">Contact</a>
           </li>
           <li class="nav-item {{blog_class|safe}}">
-            <a class="nav-link" href="blog.html">Blog</a>
+            <a class="nav-link" href="blog">Blog</a>
           </li>
         </ul>
         

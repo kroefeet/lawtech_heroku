@@ -2,15 +2,6 @@ import requests
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def index(request):
-
-    return HttpResponse('''
-        <h1>Welcome to my home page!</h1>
-        <a href="/about-me">About me</a> <br />
-        <a href="/github-api-example">See my GitHub contributions</a> <br />
-    ''')
-
-
 def contact_me(request):
     content = open('content/contact.html').read()
     
@@ -47,12 +38,15 @@ def home(request):
     
 def projects(request):
     content = open('content/projects.html').read()
+    response = requests.get('https://api.github.com/users/kroefeet/repos')
+    repos = response.json()
     
     main_data = {
     		'title' : 'Law Technology',
     		'projects_class' : 'active',
     		'copy_year' : '2019',
     		'content' : content,
+    		'github_repos': repos,
     
     }
     return render(request, 'base.html', main_data)
