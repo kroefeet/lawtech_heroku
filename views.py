@@ -38,15 +38,12 @@ def home(request):
     
 def projects(request):
     content = open('content/projects.html').read()
-    response = requests.get('https://api.github.com/users/kroefeet/repos')
-    repos = response.json()
     
     main_data = {
     		'title' : 'Law Technology',
     		'projects_class' : 'active',
     		'copy_year' : '2019',
     		'content' : content,
-    		'github_repos': repos,
     
     }
     return render(request, 'base.html', main_data)
