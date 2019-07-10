@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import datetime
 
-from mailjet_rest import Client
 import os
+mailgun_api_key = os.environ["MAILGUN_API_KEY"]
 
 
 blog_posts = [
@@ -44,45 +44,16 @@ blog_posts = [
 copy_year = datetime.datetime.now()	
 
 def contact_me(request):
-  
+    name = request.POST["name"]
+    email = request.POST["email"]
+    message = request.POST["message"]
+    
     main_data = {
     		'contact_class' : 'active',
     		'copy_year' : copy_year.year,
     }
     return render(request, 'contact.html', main_data)
 
-
-def send_email(request):
-    api_key = os.environ['MJ_APIKEY_PUBLIC']
-    api_secret = os.environ['MJ_APIKEY_PRIVATE']
-    mailjet = Client(auth=(api_key, api_secret), version='v3.1')
-
-    name = request.POST["name"]
-    email = request.POST["email"]
-    message = request.POST["message"]
-    
-    data = {
-	  'Messages': [
-	                {
-	                        "From": {
-	                                "Email": "admin@law.technology",
-	                  
-	                        },
-	                        "To": [
-	                                {
-	                                        "Email": "admin@law.technology",
-	                     
-	                                }
-	                        ],
-	                        "Subject": "Contact from law.technology",
-	                        "TextPart": name, "\n", email, "\n", message
-
-	                }
-	        ]
-    }
-    result = mailjet.send.create(data=data)
-    
-    return render(request, 'send_email.html')
     
 def home(request):
     

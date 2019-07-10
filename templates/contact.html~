@@ -13,7 +13,6 @@ Contact
 				<a class="btn my_button" href="mailto:joe@law.technology" role="button">Email</a>
 				<a class="btn my_button" href="https://github.com/kroefeet" target="_blank" role="button">GitHub</a>
 				<a class="btn my_button" href="send-email" role="button">Send me an email</a>
-    		</div>
     		
     		<div class="col-md-6 text-center">
 			   <img src="static/profile.jpg" class="img-fluid" alt="placeholder for professional picture"> 		
