@@ -1,11 +1,4 @@
-{% extends "base.html "%}
-
-{% block content %}
-
-	      <div class="row light_div rounded page_heading">
-	          <div class=" col-md-6">
-	            <h1>{{blog_title}}</h1>
-	            <p>{{date}}</p>     
+     
 
 				<p class="intro">Have you ever been interested in using common tools but with a little more privacy?
 				Then you decide you don't want to put in the work to find and host different tools. What if a group 
@@ -26,13 +19,5 @@
     		</div>
     		<div class="col-md-8 explanation">
 			<p>a placeholder</p>
-			
-				       </div>
-	 	
-	    		</div>
-	    	
-	    		
-	    		</div>
-	    	</div>
     		    		
- {% endblock content %}
+ 

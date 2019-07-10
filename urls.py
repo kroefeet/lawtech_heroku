@@ -8,7 +8,7 @@ urlpatterns = [
     path('contact', views.contact_me),
     path('projects', views.projects),
     path('blog', views.blog),
-    path('github', views.github_api),
+
 ]
 
 # Boilerplate to include static files

@@ -2,6 +2,28 @@ import requests
 from django.http import HttpResponse
 from django.shortcuts import render
 
+blog_posts = [
+		{
+			"filename": "blog/disroot.html",
+			"title": "Disroot.org",
+			"date": "June 24, 2019",
+			"hook" : "disroot",
+		},
+		{
+			"filename": "blog/elevator.html",
+			"title": "Spotted in an elevator",
+			"date": "June 01, 2019",
+			"hook" : "elevator",
+		},
+		{
+			"filename": "blog/openwireless.html",
+			"title": "Open Wireless",
+			"date": "June 24, 2019",
+			"hook" : "openwireless",
+		},
+		
+	]
+
 def contact_me(request):
     content = open('content/contact.html').read()
     
@@ -59,5 +81,18 @@ def blog(request):
     
     }
     return render(request, 'base.html', main_data)
+    
+def blog_post(request):
+    for blog_post in blog_posts:
+	    content = open(blog_post['filename']).read()
+    
+	    main_data = {
+	    		'title' : blog_post['title'],
+	    		'blog_class' : 'active',
+	    		'copy_year' : '2019',
+	    		'content' : content,
+	    
+	    }
+	    return render(request, 'base.html', main_data)
     
     
