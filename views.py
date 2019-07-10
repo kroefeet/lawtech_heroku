@@ -82,7 +82,7 @@ def blog(request):
     		'content' : content,
     
     }
-    return render(request, 'blog.html', main_data)
+    return render(request, 'blog.html', main_data, blog_posts)
     
 def blog_post(dict):
     for blog_post in blog_posts:
