@@ -14,6 +14,7 @@ Contact
 				<a class="btn my_button" href="https://github.com/kroefeet" target="_blank" role="button">GitHub</a>
 				
 				<form action="" method="POST">
+					{% csrf_token %}
 					<input name="name" placeholder="Name" />
 					<input name="email" type="email" placeholder="Email" />
 					<textarea name="message">
