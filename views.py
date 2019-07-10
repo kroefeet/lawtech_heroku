@@ -22,7 +22,7 @@ blog_posts = [
 			"hook" : "openwireless",
 		},
 		
-	]
+	]	
 
 def contact_me(request):
     content = open('content/contact.html').read()
@@ -72,7 +72,7 @@ def projects(request):
     
 def blog(request):
     content = open('content/blog.html').read()
-    
+        
     main_data = {
     		'title' : 'Law Technology',
     		'blog_class' : 'active',
@@ -82,17 +82,17 @@ def blog(request):
     }
     return render(request, 'blog.html', main_data)
     
-def blog_post(request):
+def blog_post(dict):
     for blog_post in blog_posts:
 	    content = open(blog_post['filename']).read()
     
-	    main_data = {
+	    data = {
 	    		'title' : blog_post['title'],
-	    		'blog_class' : 'active',
-	    		'copy_year' : '2019',
+	    		'pub_date' : blog_post['date'],
 	    		'content' : content,
+	    		'hook' : blog_post['hook'],
 	    
 	    }
-	    return render(request, 'base.html', main_data)
+	    
     
     
