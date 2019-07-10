@@ -82,7 +82,7 @@ def send_email(request):
     }
     result = mailjet.send.create(data=data)
     
-    return redirect("/")
+    return render(request, 'send_email.html')
     
 def home(request):
     

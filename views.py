@@ -66,16 +66,16 @@ def send_email(request):
 	                {
 	                        "From": {
 	                                "Email": "admin@law.technology",
-	                                "Name": "Me"
+	                  
 	                        },
 	                        "To": [
 	                                {
 	                                        "Email": "admin@law.technology",
-	                                        "Name": "Me"
+	                     
 	                                }
 	                        ],
 	                        "Subject": "Contact from law.technology",
-	                        "TextPart": name, "\n", email, "\n", message,
+	                        "TextPart": name, "\n", email, "\n", message
 
 	                }
 	        ]
