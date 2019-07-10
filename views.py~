@@ -3,10 +3,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import datetime
 
-from mailjet_rest import Client
-import os
-
-
 blog_posts = [
 		{
 			"filename": "blog/disroot.html",
@@ -53,34 +49,12 @@ def contact_me(request):
 
 
 def send_email(request):
-    api_key = os.environ['MJ_APIKEY_PUBLIC']
-    api_secret = os.environ['MJ_APIKEY_PRIVATE']
-    mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
     name = request.POST["name"]
     email = request.POST["email"]
     message = request.POST["message"]
     
-    data = {
-	  'Messages': [
-	                {
-	                        "From": {
-	                                "Email": "admin@law.technology",
-	                                "Name": "Me"
-	                        },
-	                        "To": [
-	                                {
-	                                        "Email": "admin@law.technology",
-	                                        "Name": "Me"
-	                                }
-	                        ],
-	                        "Subject": "Contact from law.technology",
-	                        "TextPart": name, "\n", email, "\n", message,
-
-	                }
-	        ]
-    }
-    result = mailjet.send.create(data=data)
+    # Do something with these three variables...
     
     return redirect("/")
     
