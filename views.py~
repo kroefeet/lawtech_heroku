@@ -44,16 +44,30 @@ blog_posts = [
 copy_year = datetime.datetime.now()	
 
 def contact_me(request):
-    name = request.POST["name"]
-    email = request.POST["email"]
-    message = request.POST["message"]
-    
+  
     main_data = {
     		'contact_class' : 'active',
     		'copy_year' : copy_year.year,
     }
     return render(request, 'contact.html', main_data)
 
+
+def send_email(request):
+
+    name = request.POST["name"]
+    email = request.POST["email"]
+    message = request.POST["message"]
+    
+    return requests.post(
+        "https://api.mailgun.net/v3/Ylaw.technology/messages",
+        auth=("api", "MAILGUN_API_KEY"),
+        data={"from": email,
+              "to": ["admin@law.technology", "admin@law.technology"],
+              "subject": "contact from law.technology",
+              "text": name, email, message})
+    
+    
+    return redirect("/")
     
 def home(request):
     
