@@ -22,7 +22,7 @@ blog_posts = [
 			"hook" : "openwireless",
 		},
 		
-	]
+	]	
 
 def contact_me(request):
     content = open('content/contact.html').read()
@@ -72,7 +72,7 @@ def projects(request):
     
 def blog(request):
     content = open('content/blog.html').read()
-    blog_post(blog_posts)
+        
     main_data = {
     		'title' : 'Law Technology',
     		'blog_class' : 'active',
