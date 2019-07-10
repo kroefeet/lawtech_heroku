@@ -66,7 +66,7 @@
 
    <div class="container">
       <footer class="footer dark_div">
-     		 <p> <strong>&copy; {{ copy_year|safe }}</strong>  <a href="">law.technology</a></p>
+     		 <p> <strong>&copy; {{copy_year|safe}}</strong>  <a href="">law.technology</a></p>
    	 </footer>
 	</div>
 
