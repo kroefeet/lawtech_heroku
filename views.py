@@ -34,7 +34,7 @@ def contact_me(request):
     		'content' : content,
     
     }
-    return render(request, 'base.html', main_data)
+    return render(request, 'contact.html', main_data)
 
 
 def github_api(request):
@@ -56,7 +56,7 @@ def home(request):
     		'content' : content,
     
     }
-    return render(request, 'base.html', main_data)
+    return render(request, 'index.html', main_data)
     
 def projects(request):
     content = open('content/projects.html').read()
@@ -68,7 +68,7 @@ def projects(request):
     		'content' : content,
     
     }
-    return render(request, 'base.html', main_data)
+    return render(request, 'projects.html', main_data)
     
 def blog(request):
     content = open('content/blog.html').read()
@@ -80,7 +80,7 @@ def blog(request):
     		'content' : content,
     
     }
-    return render(request, 'base.html', main_data)
+    return render(request, 'blog.html', main_data)
     
 def blog_post(request):
     for blog_post in blog_posts:

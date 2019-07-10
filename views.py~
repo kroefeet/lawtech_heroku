@@ -7,16 +7,19 @@ blog_posts = [
 			"filename": "blog/disroot.html",
 			"title": "Disroot.org",
 			"date": "June 24, 2019",
+			"hook" : "disroot",
 		},
 		{
 			"filename": "blog/elevator.html",
 			"title": "Spotted in an elevator",
 			"date": "June 01, 2019",
+			"hook" : "elevator",
 		},
 		{
 			"filename": "blog/openwireless.html",
 			"title": "Open Wireless",
 			"date": "June 24, 2019",
+			"hook" : "openwireless",
 		},
 		
 	]
