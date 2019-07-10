@@ -51,6 +51,11 @@ h1, h2, h3, p {
 	color: #fff;
 }
 
+.my_blog_button {
+	background-color: #00FF00;
+	color: #000;
+}
+
 .my_card {
 	padding: .75rem;
 }

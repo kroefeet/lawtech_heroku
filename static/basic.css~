@@ -26,7 +26,7 @@
 /* content and body styles */
 
  body {
- 	background-image: url("../img/background.jpg");
+ 	background-image: url("background.jpg");
  	background-color: #cccccc;
  	height: 1000px; /* You must set a specified height */
  	background-position: center; /* Center the image */
