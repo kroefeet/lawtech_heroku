@@ -54,15 +54,6 @@ def contact_me(request):
     }
     return render(request, 'contact.html', main_data)
 
-
-def send_email(request):
-
-    name = request.POST["name"]
-    email = request.POST["email"]
-    message = request.POST["message"]
-    
-    
-    return redirect("/")
     
 def home(request):
     
