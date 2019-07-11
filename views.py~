@@ -53,22 +53,22 @@ def contact_me(request):
 
 
 def send_email(request):
-
-    name = request.POST["name"]
-    email = request.POST["email"]
-    message = request.POST["message"]
-         
-   
-    response = requests.post(
-        "https://api.mailgun.net/v3/mg.law.technology/messages",
-        auth=("api", "MAILGUN_API_KEY"),
-        data={
-        		  "from": email,
-              "to": "admin@law.technology",
-              "subject": "contact from law.technology",
-              "text": [name, email, message]
-              }
-              )
+    if 'name' in request.POST:
+	    name = request.POST["name"]
+	    email = request.POST["email"]
+	    message = request.POST["message"]
+	         
+	   
+	    response = requests.post(
+	        "https://api.mailgun.net/v3/mg.law.technology/messages",
+	        auth=("api", "MAILGUN_API_KEY"),
+	        data={
+	        		  "from": email,
+	              "to": "admin@law.technology",
+	              "subject": "contact from law.technology",
+	              "text": [name, email, message]
+	              }
+	              )
     
     main_data = {
     		'contact_class' : 'active',

@@ -75,7 +75,7 @@ def send_email(request):
     		'copy_year' : copy_year.year,
     }
     
-    return render(request, 'send-email.html', main_data)
+    return render(request, 'send_email.html', main_data)
     
 def home(request):
     
