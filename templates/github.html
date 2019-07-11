@@ -10,7 +10,7 @@
   <div class="col-md-6">
     <ol>
     {% for repo in github_repos %}
-        <li>Repo name : {{ repo.name }} | <a href="{{ repo.url }}" target="_blank">Link to the repo</li>
+        <li>Repo name : {{ repo.name }} | <a href="https://github.com/kroefeet/{{ repo.name }}" target="_blank">Link to the repo</a></li>
     {% endfor %}
     </ol>
   </div>
