@@ -58,16 +58,19 @@ def send_email(request):
     email = request.POST["email"]
     message = request.POST["message"]
     
-    return requests.post(
-        "https://api.mailgun.net/v3/mg.law.technology/messages",
-        auth=("api", "MAILGUN_API_KEY"),
-        data={
-        		  "from": email,
-              "to": ["admin@law.technology", "admin@law.technology"],
-              "subject": "contact from law.technology",
-              "text": [name, email, message]
-              }
-              )
+    user_contact = [name, email, message] 
+       
+    
+#    return requests.post(
+#        "https://api.mailgun.net/v3/mg.law.technology/messages",
+#        auth=("api", "MAILGUN_API_KEY"),
+#        data={
+#        		  "from": email,
+#              "to": ["admin@law.technology", "admin@law.technology"],
+#              "subject": "contact from law.technology",
+#              "text": [name, email, message]
+#              }
+#              )
     
     
     return redirect("/")
