@@ -19,8 +19,9 @@ Email Me
 					<button type="submit">Submit</button>
 				</form>				
 				
+				{{ data }}
     		</div>
-    		{{ data }}
+    		
     		<div class="col-md-6 text-center">
 			   <img src="static/profile.jpg" class="img-fluid" alt="placeholder for professional picture"> 		
     		</div>

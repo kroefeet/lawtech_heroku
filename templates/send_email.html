@@ -12,6 +12,7 @@ Email Me
 				<p class="intro">Send me an email</p>
 				
 				<form action="." method="POST">
+					{% csrf_token %}
 					<input name="username" placeholder="Name" />
 					<input name="useremail" type="email" placeholder="Email" />
 					<textarea name="message">
