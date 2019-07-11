@@ -54,11 +54,11 @@ def contact_me(request):
 		form = UserForm(request.POST)
 
 		# check whether it's valid:
-		name = request.POST["username"]
-        email = request.POST["useremail"]
-        message = request.POST["message"]
+		# name = request.POST["username"]
+        # email = request.POST["useremail"]
+        # message = request.POST["message"]
 
-		send_email(name,email,message)
+		send_email(form)
 
     main_data = {
     		'contact_class' : 'active',
@@ -67,16 +67,16 @@ def contact_me(request):
     return render(request, 'contact.html', main_data)
 
 
-def send_email(name,email,message):
+def send_email(form):
 
 	    response = requests.post(
 	        "https://api.mailgun.net/v3/mg.law.technology/messages",
 	        auth=("api", "MAILGUN_API_KEY"),
 	        data={
-	        		  "from": email,
-	              "to": "admin@law.technology",
-	              "subject": "contact from law.technology",
-	              "text": [name, email, message]
+				"from": "admin@law.technology",
+				"to": "admin@law.technology",
+				"subject": "contact from law.technology",
+				"text": form
 	              }
 	              )
 
