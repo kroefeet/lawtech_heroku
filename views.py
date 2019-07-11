@@ -58,9 +58,9 @@ def send_email(request):
     		'copy_year' : copy_year.year,
     }
 
-    if 'name' in request.POST:
-	    name = request.POST["name"]
-	    email = request.POST["email"]
+    if 'username' in request.POST:
+	    name = request.POST["username"]
+	    email = request.POST["useremail"]
 	    message = request.POST["message"]
 	    
 	    print(request.POST)     
