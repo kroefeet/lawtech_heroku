@@ -8,7 +8,7 @@ urlpatterns = [
     path('contact', views.contact_me),
     path('projects', views.projects),
     path('blog', views.blog),
-    path('/send-email', views.send_email),
+    path('send-email', views.send_email),
 
 ]
 
