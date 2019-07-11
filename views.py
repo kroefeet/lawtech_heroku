@@ -53,7 +53,7 @@ def contact_me(request):
 
 
 def send_email(request):
-
+    data = {}
     if request.method == 'POST':
 	    name = request.POST["username"]
 	    email = request.POST["useremail"]
