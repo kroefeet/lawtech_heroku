@@ -12,15 +12,15 @@ Email Me
 				<p class="intro">Send me an email</p>
 				
 				<form action="." method="POST">
-					<input name="name" placeholder="Name" />
-					<input name="email" type="email" placeholder="Email" />
+					<input name="username" placeholder="Name" />
+					<input name="useremail" type="email" placeholder="Email" />
 					<textarea name="message">
 					</textarea>
 					<button type="submit">Submit</button>
 				</form>				
 				
     		</div>
-    		
+    		{{ data }}
     		<div class="col-md-6 text-center">
 			   <img src="static/profile.jpg" class="img-fluid" alt="placeholder for professional picture"> 		
     		</div>
