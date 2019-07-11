@@ -54,10 +54,10 @@ def contact_me(request):
 		form = UserForm(request.POST)
 
 		# check whether it's valid:
-		# name = request.POST["username"]
-        # email = request.POST["useremail"]
-        # message = request.POST["message"]
-		print(form)
+		name = request.POST["name"]
+		email = request.POST["email"]
+		message = request.POST["message"]
+		print(name)
 		send_email(form)
 		return redirect("contact")
 	else:
