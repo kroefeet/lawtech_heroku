@@ -67,7 +67,8 @@ def contact_me(request):
 	    		'copy_year' : copy_year.year,
 				'form' : form
 	    		}
-	    return render(request, 'contact.html', main_data)
+
+		return render(request, 'contact.html', main_data)
 
 
 def send_email(form):
