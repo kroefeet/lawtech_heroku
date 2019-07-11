@@ -44,9 +44,9 @@ blog_posts = [
 copy_year = datetime.datetime.now()
 
 class UserForm(forms.Form):
-    full_name = forms.CharField(max_length=100)
+    username = forms.CharField(max_length=100)
     message = forms.CharField(widget=forms.Textarea)
-    email = forms.EmailField(required=TRUE)
+    useremail = forms.EmailField(required=TRUE)
 
 def contact_me(request):
 
@@ -57,10 +57,9 @@ def contact_me(request):
 
 		# check whether it's valid:
 		if form.is_valid():
-
-			name = request.POST["username"]
-		    email = request.POST["useremail"]
-		    message = request.POST["message"]
+            name = request.POST["username"]
+            email = request.POST["useremail"]
+            message = request.POST["message"]
 
 			send_email(name,email,message)
 
