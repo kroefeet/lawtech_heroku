@@ -59,7 +59,7 @@ def contact_me(request):
 		message = request.POST["message"]
 
 		send_email(name, email, message)
-		
+
 	else:
 		form = UserForm()
 		main_data = {
@@ -109,3 +109,12 @@ def blog(request):
     		'copy_year' : copy_year.year,
     }
     return render(request, 'blog.html', main_data)
+
+def github_api(request):
+    # We can also combine Django with APIs, or
+    response = requests.get('https://api.github.com/users/kroefeet/repos')
+    repos = response.json()
+    context = {
+        'github_repos': repos,
+    }
+    return render(request, 'github.html', context)

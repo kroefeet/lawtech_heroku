@@ -1,0 +1,14 @@
+{% extends base.html %}
+
+{% block content %}
+
+            <h1>My github repos</h1>
+            <p>Because I can't get Mailgun API to work</p>
+            <ol>
+            {% for repo in github_repos %}
+                <li>{{ repo.name }}</li>
+                <li>{{ repo.url }}</li>
+            {% endfor %}
+            </ol>
+
+{% endblock content %}
