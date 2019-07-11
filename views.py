@@ -61,9 +61,12 @@ def contact_me(request):
 		send_email(form)
 		return redirect("contact")
 	else:
+		form = UserForm()
+
 	    main_data = {
 	    		'contact_class' : 'active',
 	    		'copy_year' : copy_year.year,
+				'form' : form
 	    }
 	    return render(request, 'contact.html', main_data)
 
