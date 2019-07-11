@@ -57,8 +57,8 @@ def contact_me(request):
 		name = request.POST["name"]
 		email = request.POST["email"]
 		message = request.POST["message"]
-		print(name)
-		send_email(form)
+
+		send_email(name, email, message)
 		return redirect("contact")
 	else:
 		form = UserForm()
@@ -71,7 +71,7 @@ def contact_me(request):
 		return render(request, 'contact.html', main_data)
 
 
-def send_email(form):
+def send_email(name, email, message):
 
 	    response = requests.post(
 	        "https://api.mailgun.net/v3/mg.law.technology/messages",
@@ -80,7 +80,7 @@ def send_email(form):
 				"from": "admin@law.technology",
 				"to": "admin@law.technology",
 				"subject": "contact from law.technology",
-				"text": form
+				"text": [name, email, message]
 	              }
 	              )
 
