@@ -59,12 +59,13 @@ def contact_me(request):
         # message = request.POST["message"]
 
 		send_email(form)
-
-    main_data = {
-    		'contact_class' : 'active',
-    		'copy_year' : copy_year.year,
-    }
-    return render(request, 'contact.html', main_data)
+		return redirect("contact")
+	else:
+	    main_data = {
+	    		'contact_class' : 'active',
+	    		'copy_year' : copy_year.year,
+	    }
+	    return render(request, 'contact.html', main_data)
 
 
 def send_email(form):
