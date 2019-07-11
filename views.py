@@ -44,9 +44,9 @@ blog_posts = [
 copy_year = datetime.datetime.now()
 
 class UserForm(forms.Form):
-    username = forms.CharField(max_length=100)
+    name = forms.CharField(max_length=100)
     message = forms.CharField(widget=forms.Textarea)
-    useremail = forms.EmailField()
+    email = forms.EmailField()
 
 def contact_me(request):
 	if request.method == 'POST':
@@ -57,7 +57,7 @@ def contact_me(request):
 		# name = request.POST["username"]
         # email = request.POST["useremail"]
         # message = request.POST["message"]
-
+		print(form)
 		send_email(form)
 		return redirect("contact")
 	else:
