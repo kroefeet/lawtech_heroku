@@ -46,7 +46,7 @@ copy_year = datetime.datetime.now()
 class UserForm(forms.Form):
     username = forms.CharField(max_length=100)
     message = forms.CharField(widget=forms.Textarea)
-    useremail = forms.EmailField(required=TRUE)
+    useremail = forms.EmailField()
 
 def contact_me(request):
 	if request.method == 'POST':
