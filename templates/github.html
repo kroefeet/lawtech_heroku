@@ -2,13 +2,19 @@
 
 {% block content %}
 
-            <h1>My github repos</h1>
-            <p>Because I can't get Mailgun API to work</p>
-            <ol>
-            {% for repo in github_repos %}
-                <li>{{ repo.name }}</li>
-                <li>{{ repo.url }}</li>
-            {% endfor %}
-            </ol>
+<div class="row light_div rounded page_heading">
+    <div class=" col-md-6">
+      <h1>My Github Repos</h1>
+        <p>Because I can't get Mailgun API to work</p>
+      </div>
+  <div class="col-md-6">
+    <ol>
+    {% for repo in github_repos %}
+        <li>Repo name : {{ repo.name }} | <a href="{{ repo.url }}" target="_blank">Link to the repo</li>
+    {% endfor %}
+    </ol>
+  </div>
+
+
 
 {% endblock content %}
