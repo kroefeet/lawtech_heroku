@@ -54,7 +54,7 @@ def contact_me(request):
 
 		# create a form instance and populate it with data from the request:
 		form = UserForm(request.POST)
-
+		print(UserForm)
 		# check whether it's valid:
 		if form.is_valid():
             name = request.POST["username"]
@@ -71,8 +71,6 @@ def contact_me(request):
 
 
 def send_email(name,email,message):
-
-	    print(request.POST)
 
 	    response = requests.post(
 	        "https://api.mailgun.net/v3/mg.law.technology/messages",
