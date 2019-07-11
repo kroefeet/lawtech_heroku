@@ -52,11 +52,11 @@ def contact_me(request):
     return render(request, 'contact.html', main_data)
 
 
-def send_email(name, email, message):
+def send_email(request):
 
-    #name = request.POST["name"]
-#    email = request.POST["email"]
-#    message = request.POST["message"]
+    name = request.POST["name"]
+    email = request.POST["email"]
+    message = request.POST["message"]
          
    
     response = requests.post(
@@ -70,8 +70,12 @@ def send_email(name, email, message):
               }
               )
     
+    main_data = {
+    		'contact_class' : 'active',
+    		'copy_year' : copy_year.year,
+    }
     
-    return response
+    return render(request, 'send-email.html', main_data)
     
 def home(request):
     
