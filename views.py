@@ -59,7 +59,7 @@ def contact_me(request):
 		message = request.POST["message"]
 
 		send_email(name, email, message)
-		return redirect("")
+		
 	else:
 		form = UserForm()
 		main_data = {
