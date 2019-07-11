@@ -62,7 +62,6 @@ def contact_me(request):
 		return redirect("contact")
 	else:
 		form = UserForm()
-
 	    main_data = {
 	    		'contact_class' : 'active',
 	    		'copy_year' : copy_year.year,
