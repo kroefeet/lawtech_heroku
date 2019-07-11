@@ -53,6 +53,11 @@ def contact_me(request):
 
 
 def send_email(request):
+    main_data = {
+    		'contact_class' : 'active',
+    		'copy_year' : copy_year.year,
+    }
+
     if 'name' in request.POST:
 	    name = request.POST["name"]
 	    email = request.POST["email"]
@@ -70,10 +75,7 @@ def send_email(request):
 	              }
 	              )
     
-    main_data = {
-    		'contact_class' : 'active',
-    		'copy_year' : copy_year.year,
-    }
+
     
     return render(request, 'send_email.html', main_data)
     

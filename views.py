@@ -62,7 +62,8 @@ def send_email(request):
 	    name = request.POST["name"]
 	    email = request.POST["email"]
 	    message = request.POST["message"]
-	         
+	    
+	    print(request.POST)     
 	   
 	    response = requests.post(
 	        "https://api.mailgun.net/v3/mg.law.technology/messages",
