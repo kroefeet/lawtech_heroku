@@ -14,11 +14,11 @@ Contact
 				<a class="btn my_button" href="https://github.com/kroefeet" target="_blank" role="button">GitHub</a>
 				<br>				
 				<p>You could also send me an email directly using this form:</p>
-				<form action="/send-email" method="POST">
+				<form action="" method="POST">
 					{% csrf_token %}
 					<input name="name" placeholder="Name" />
 					<input name="email" type="email" placeholder="Email" />
-					<textarea name="message">
+					<textarea name="message" placeholder="Type your message here">
 					</textarea>
 					<button type="submit">Submit</button>
 				</form>	

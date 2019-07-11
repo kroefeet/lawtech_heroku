@@ -44,7 +44,7 @@ blog_posts = [
 copy_year = datetime.datetime.now()	
 
 def contact_me(request):
-  
+
     main_data = {
     		'contact_class' : 'active',
     		'copy_year' : copy_year.year,
@@ -52,7 +52,7 @@ def contact_me(request):
     return render(request, 'contact.html', main_data)
 
 
-def send_email(request):
+def send_email(*args):
 
     name = request.POST["name"]
     email = request.POST["email"]
@@ -71,7 +71,7 @@ def send_email(request):
               )
     
     
-    return redirect("/")
+    return redirect("/contact")
     
 def home(request):
     
