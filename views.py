@@ -49,19 +49,16 @@ class UserForm(forms.Form):
     useremail = forms.EmailField(required=TRUE)
 
 def contact_me(request):
-
 	if request.method == 'POST':
-
 		# create a form instance and populate it with data from the request:
 		form = UserForm(request.POST)
-		print(UserForm)
-		# check whether it's valid:
-		if form.is_valid():
-            name = request.POST["username"]
-            email = request.POST["useremail"]
-            message = request.POST["message"]
 
-			send_email(name,email,message)
+		# check whether it's valid:
+		name = request.POST["username"]
+        email = request.POST["useremail"]
+        message = request.POST["message"]
+
+		send_email(name,email,message)
 
     main_data = {
     		'contact_class' : 'active',
