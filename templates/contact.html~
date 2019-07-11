@@ -12,7 +12,8 @@ Contact
 				<p class="intro">I am available a number of different ways:</p>
 				<a class="btn my_button" href="mailto:joe@law.technology" role="button">Email</a>
 				<a class="btn my_button" href="https://github.com/kroefeet" target="_blank" role="button">GitHub</a>
-				
+				<br>				
+				<p>You could also send me an email directly using this form:</p>
 				<form action="" method="POST">
 					{% csrf_token %}
 					<input name="name" placeholder="Name" />
