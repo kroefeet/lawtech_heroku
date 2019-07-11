@@ -15,7 +15,7 @@ blog_posts = [
 			"hook" : "disroot",
 			"intro" : """
 				Have you ever been interested in using common tools but with a little more privacy?
-				Then you decide you don't want to put in the work to find and host different tools. What if a group 
+				Then you decide you don't want to put in the work to find and host different tools. What if a group
 				was already doing that for you?
   			""",
 		},
@@ -38,12 +38,31 @@ blog_posts = [
 				You and a lot of other people. Do you like organizations like Electronic Frontier Foundation, mozilla, Internet Archive?
 			""",
 		},
-		
+
 	]
 
-copy_year = datetime.datetime.now()	
+copy_year = datetime.datetime.now()
+
+class UserForm(forms.Form):
+    full_name = forms.CharField(max_length=100)
+    message = forms.CharField(widget=forms.Textarea)
+    email = forms.EmailField(required=TRUE)
 
 def contact_me(request):
+
+	if request.method == 'POST':
+
+		# create a form instance and populate it with data from the request:
+		form = UserForm(request.POST)
+
+		# check whether it's valid:
+		if form.is_valid():
+
+			name = request.POST["username"]
+		    email = request.POST["useremail"]
+		    message = request.POST["message"]
+
+			send_email(name,email,message)
 
     main_data = {
     		'contact_class' : 'active',
@@ -52,15 +71,10 @@ def contact_me(request):
     return render(request, 'contact.html', main_data)
 
 
-def send_email(request):
-    data = {}
-    if request.method == 'POST':
-	    name = request.POST["username"]
-	    email = request.POST["useremail"]
-	    message = request.POST["message"]
-	    
-	    print(request.POST)     
-	   
+def send_email(name,email,message):
+
+	    print(request.POST)
+
 	    response = requests.post(
 	        "https://api.mailgun.net/v3/mg.law.technology/messages",
 	        auth=("api", "MAILGUN_API_KEY"),
@@ -71,40 +85,29 @@ def send_email(request):
 	              "text": [name, email, message]
 	              }
 	              )
-    
-    main_data = {
-    		'contact_class' : 'active',
-    		'copy_year' : copy_year.year,
-    		'email_data': data,
-    }
-    
-    return render(request, 'send_email.html', main_data)
-    
+
+
 def home(request):
-    
+
     main_data = {
     		'home_class' : 'active',
     		'copy_year' : copy_year.year,
      }
     return render(request, 'index.html', main_data)
-    
+
 def projects(request):
-    
+
     main_data = {
     		'projects_class' : 'active',
 			'copy_year' : copy_year.year,
       }
     return render(request, 'projects.html', main_data)
-    
+
 def blog(request):
-        
+
     main_data = {
     		'blog_class' : 'active',
     		'blog_posts' : blog_posts,
     		'copy_year' : copy_year.year,
     }
     return render(request, 'blog.html', main_data)
-    
-
-	
-    
